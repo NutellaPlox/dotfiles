@@ -1,0 +1,67 @@
+{
+    "layer": "top",
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "modules-left": ["wlr/workspaces","hyprland/submap"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock"],
+    "clock": {
+        "format": "  {:%I:%M %p |  %x } ",
+        "interval": 60,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "hyprland/window": {
+        "max-length": 400,
+	"separate-outputs": true
+    },
+    "wlr/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+    },
+    "hyprland/submap": {
+        "format": "{}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "   {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  Connected",
+        "format-disconnected": " Disconnected",
+        "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+        "format-linked": "{ifname} (No IP) ",
+        "on-click-right": "nm-connection-editor",
+        "on-click": "bash './rofi-network-manager.sh'"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": "   {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}%  ",
+        "format-source-muted": "  ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+}
