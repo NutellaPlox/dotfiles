@@ -14,9 +14,15 @@ logger = logging.getLogger(__name__)
 def write_output(text, player):
     logger.info('Writing output')
 
+    filtered_player_name = 'unknown'
+
+    if player.props.player_name == 'spotify' or player.props.player_name == 'firefox' or player.props.player_name == 'vlc':
+        filtered_player_name = player.props.player_name
+
     output = {'text': text,
-              'class': 'custom-' + player.props.player_name,
-              'alt': player.props.player_name}
+              'class': 'custom-' + filtered_player_name,
+              'alt': player.props.player_name,
+              'status': player.props.status}
 
     sys.stdout.write(json.dumps(output) + '\n')
     sys.stdout.flush()
@@ -43,6 +49,16 @@ def on_metadata(player, metadata, manager):
 
     if player.props.status != 'Playing' and track_info:
         track_info = track_info + '  '
+
+    if player.props.player_name == 'spotify':
+        track_info = ' ' + track_info
+    elif player.props.player_name == 'firefox':
+        track_info = ' ' + track_info
+    elif player.props.player_name == 'vlc':
+        track_info = ' ' + track_info
+    else:
+        track_info = ' ' + track_info
+
     write_output(track_info, player)
 
 

@@ -1,58 +1,130 @@
+/* Catpuccin Mocha Colors */
+@define-color base rgb(30, 30, 46);
+@define-color mantle rgba(24, 24, 37, 0.85);
+@define-color red rgb(243, 139, 168);
+@define-color blue rgb(137, 180, 250);
+@define-color teal rgb(148, 226, 213);
+@define-color sky rgb(137, 220, 235);
+@define-color green rgb(166, 227, 161);
+@define-color flamingo rgb(242, 205, 205);
+@define-color muave rgb(203, 166, 247);
+@define-color yellow rgb(249, 226, 175);
+@define-color lavendar rgb(180, 190, 254);
+@define-color maroon rgb(235, 160, 172);
+@define-color peach rgb(250, 179, 135);
+@define-color border rgba(89, 89, 89, 0.3);
 * {
-    border: none;
-    border-radius: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    min-height: 0;
+  font-family: "FiraCode Nerd Font";
+  font-size: 13px;
+  min-height: 0;
+  border-radius: 10px;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: white;
+  background: rgba(0,0,0,0); /* Makes main background transparent*/
 }
 
 tooltip {
-  background: rgba(43, 48, 59, 0.5);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+  background: @mantle;
+  border: 1px solid @border;
+  
 }
 tooltip label {
   color: white;
+  padding: 8px;
+}
+
+.modules-left, .modules-center, .modules-right {
+	background: rgba(24, 24, 37, 0.85);
+	padding: 0 16px;
+  border: 1px solid rgba(89, 89, 89, 0.3);
+}
+#disk {
+  color: @peach;
+  margin-left: 16px;
+}
+
+#pulseaudio {
+  color: @lavendar;
+  margin-left:16px;
+}
+
+#bluetooth {
+	margin-left: 10px;
+	color: @blue
+}
+
+#workspaces {
+  padding-top:2px; /* Centers text vertically */
+  margin-left:-6px;
 }
 
 #workspaces button {
-    padding: 0 5px;
     background: transparent;
-    color: white;
+    color: @red;
     border-bottom: 3px solid transparent;
 }
 
+#workspaces button:hover {
+  color: @sky;
+}
+
 #workspaces button.active {
-    background: #64727D;
-    border-bottom: 3px solid white;
+  color: @green;
 }
 
-#mode, #clock, #battery {
-    padding: 0 10px;
+#custom-media {
+  margin-left: 16px;
 }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+.custom-spotify {
+  color: @green;
+}
+
+.custom-firefox {
+  color: @red;
+}
+
+.custom-unknown {
+  color: @muave;
+}
+
+#custom-power {
+	margin-right: 5px;
+	margin-left: 15px;
+	color: @red;
+}
+
+#custom-mediaprev, #custom-mediaplaypause, #custom-medianext {
+	margin-left: 16px;
+	padding-right: 4px
+}
+
+#custom-weather {
+  color: @teal;
 }
 
 #clock {
-    background-color: #64727D;
+  color: @flamingo;
+  margin-left: 16px;
 }
 
-#battery {
-    background-color: #ffffff;
-    color: black;
+#cpu {
+  margin-left:16px;
+  color: @yellow;
 }
 
-#battery.charging {
-    color: white;
-    background-color: #26A65B;
+#memory {
+  margin-left:16px;
+  color: @blue;
+}
+
+#network {
+  margin-left: 16px;
+}
+
+.ethernet, .wifi {
+  color: @green;
 }
 
 @keyframes blink {
@@ -60,14 +132,4 @@ tooltip label {
         background-color: #ffffff;
         color: black;
     }
-}
-
-#battery.warning:not(.charging) {
-    background: #f53c3c;
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
