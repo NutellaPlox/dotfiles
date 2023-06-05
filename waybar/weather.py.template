@@ -82,7 +82,8 @@ if curHour > 18: # We want 5 hours of forecast
     for hourTmrw in range(0, hoursTmrw):
         hourlyWeather.append(content['weather'][1]['hourly'][hourTmrw])
 else:
-    hourlyWeather.append(weatherToday['hourly'].slice(curHour + 1, curHour + 6))
+    for additionalHour in range(1, 6):
+        hourlyWeather.append(weatherToday['hourly'][curHour + additionalHour])
 
 data['text'] = icon + "  " + current['temp_F'] + "°F " + desc  
 data['tooltip'] = f"<span size='12pt'><b><span color='#f38ba8'></span> {highF}  <span color='#89b4fa'></span> {lowF}  <span color='#89dceb'></span> {humidity}</b></span>"
