@@ -9,7 +9,7 @@
     "output": ["DP-2"],
     "modules-left": ["wlr/workspaces", "bluetooth", "custom/mediaprev", "custom/mediaplaypause", "custom/medianext", "custom/media"],
     "modules-center": ["custom/weather", "clock"],
-    "modules-right": ["hyprland/window", "pulseaudio", "network", "disk", "cpu", "memory", "custom/power"],
+    "modules-right": ["hyprland/window", "idle_inhibitor", "pulseaudio", "network", "disk", "cpu", "memory", "custom/power"],
     "custom/weather": {
       "format": "{}",
       "interval": 1800,
@@ -28,6 +28,13 @@
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
       "on-click": "blueman-manager"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
     },
     "clock": {
         "format": "{:%I:%M  %p   %A  %b  %d}",
@@ -55,7 +62,8 @@
                     }
     },
     "hyprland/window": {
-      "format": "  {}"
+      "format": "  {}",
+      "max-length": 100
     },
     "wlr/workspaces": {
         "on-click": "activate",

@@ -9,14 +9,27 @@ lsp.ensure_installed({
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true}),
+	['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+	['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+	['<CR>'] = cmp.mapping.confirm({ select = true}),
 	['<C-Space>'] = cmp.mapping.complete(),
 })
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
+})
+
+lsp.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
+
+vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {noremap=true, silent=true})
+
+vim.diagnostic.config({
+  virtual_text = false,
 })
 
 lsp.on_attach(function(client, bufnr)
