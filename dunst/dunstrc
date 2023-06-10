@@ -27,10 +27,10 @@
     # The maximum height of a single notification, excluding the frame.
     height = 300
 
-    origin = top-center
+    origin = top-right
 
     # Offset from the origin
-    offset = 0x10
+    offset = 10x10
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -168,7 +168,7 @@
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
-    vertical_alignment = center
+    vertical_alignment = right
 
     # Show age of message if message is older than show_age_threshold
     # seconds.

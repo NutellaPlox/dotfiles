@@ -9,7 +9,7 @@
     "output": ["eDP-1"],
     "modules-left": ["wlr/workspaces", "bluetooth", "custom/mediaprev", "custom/mediaplaypause", "custom/medianext", "custom/media"],
     "modules-center": ["custom/weather", "clock"],
-    "modules-right": ["pulseaudio", "network", "disk", "cpu", "memory", "battery", "backlight", "custom/power"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "disk", "cpu", "memory", "battery", "backlight", "custom/power"],
     "backlight": {
       "device": "intel_backlight",
       "format": "{percent}% {icon}",
@@ -46,6 +46,13 @@
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
       "on-click": "blueman-manager"
     },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
     "clock": {
         "format": "{:%I:%M  %p   %A  %b  %d}",
         "interval": 60,
@@ -73,7 +80,11 @@
     },
     "hyprland/window": {
       "format": "  {}",
+<<<<<<< HEAD
       "max-length": 30
+=======
+      "max-length": 100
+>>>>>>> main
     },
     "wlr/workspaces": {
         "on-click": "activate",

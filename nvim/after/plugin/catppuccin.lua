@@ -4,7 +4,13 @@ require("catppuccin").setup({
     all = {
       surface1="#9195b3" --For lighter line numbers
     }
-  }
+  },
+  integrations = {
+    nvimtree = {
+      enabled = true,
+      transparent_panel = true
+    }
+  },
 })
 
 vim.cmd.colorscheme "catppuccin"
