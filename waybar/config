@@ -80,11 +80,7 @@
     },
     "hyprland/window": {
       "format": "  {}",
-<<<<<<< HEAD
       "max-length": 30
-=======
-      "max-length": 100
->>>>>>> main
     },
     "wlr/workspaces": {
         "on-click": "activate",
