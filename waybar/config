@@ -6,10 +6,27 @@
     "height": 32,
     "padding-left": 10,
     "padding-right": 10,
-    "output": ["DP-2"],
+    "output": ["eDP-1"],
     "modules-left": ["wlr/workspaces", "bluetooth", "custom/mediaprev", "custom/mediaplaypause", "custom/medianext", "custom/media"],
     "modules-center": ["custom/weather", "clock"],
-    "modules-right": ["hyprland/window", "pulseaudio", "network", "disk", "cpu", "memory", "custom/power"],
+    "modules-right": ["pulseaudio", "network", "disk", "cpu", "memory", "battery", "backlight", "custom/power"],
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{percent}% {icon}",
+      "format-icons": ["", ""],
+      "on-scroll-down": "~/.config/waybar/brightness.sh decrease 5",
+      "on-scroll-up": "~/.config/waybar/brightness.sh increase 5"
+    },
+    "battery": {
+          "interval": 60,
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{capacity}% {icon}",
+      "format-icons": ["", "", "", "", ""],
+      "max-length": 25
+    },
     "custom/weather": {
       "format": "{}",
       "interval": 1800,
@@ -55,7 +72,8 @@
                     }
     },
     "hyprland/window": {
-      "format": "  {}"
+      "format": "  {}",
+      "max-length": 30
     },
     "wlr/workspaces": {
         "on-click": "activate",
@@ -119,7 +137,7 @@
         "format": "{}",
         "escape": true,
         "return-type": "json",
-        "max-length": 40,
+        "max-length": 30,
         "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
         "exec": "$HOME/.config/waybar/mediaplayer.py", // Script in resources/custom_modules folder
         "exec-if": "pgrep 'spotify|firefox|vlc'"

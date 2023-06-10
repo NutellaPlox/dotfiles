@@ -50,10 +50,10 @@ def on_metadata(player, metadata, manager):
     if player.props.status != 'Playing' and track_info:
         track_info = track_info + '  '
 
-    if player.props.player_name == 'spotify':
+    if player.props.player_name == 'ncspot':
         track_info = ' ' + track_info
     elif player.props.player_name == 'firefox':
-        track_info = ' ' + track_info
+        track_info = '  ' + track_info
     elif player.props.player_name == 'vlc':
         track_info = ' ' + track_info
     else:

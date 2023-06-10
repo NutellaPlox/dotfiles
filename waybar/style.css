@@ -39,6 +39,19 @@ tooltip label {
 	padding: 0 16px;
   border: 1px solid rgba(89, 89, 89, 0.3);
 }
+
+#backlight {
+  color: @peach;
+  margin-left: 16px;
+  margin-right: 12px;
+}
+
+#battery {
+  color:@green;
+  margin-left:16px;
+  margin-right:12px;
+}
+
 #disk {
   color: @peach;
   margin-left: 16px;
@@ -77,7 +90,7 @@ tooltip label {
   margin-left: 16px;
 }
 
-.custom-spotify {
+.custom-ncspot {
   color: @green;
 }
 
@@ -97,7 +110,8 @@ tooltip label {
 
 #custom-mediaprev, #custom-mediaplaypause, #custom-medianext {
 	margin-left: 16px;
-	padding-right: 4px
+	padding-right: 4px;
+  color: #cdd6f4;
 }
 
 #custom-weather {
@@ -125,6 +139,10 @@ tooltip label {
 
 .ethernet, .wifi {
   color: @green;
+}
+
+.disconnected {
+  color: @base;
 }
 
 @keyframes blink {
