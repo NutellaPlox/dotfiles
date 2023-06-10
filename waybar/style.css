@@ -50,7 +50,7 @@ tooltip label {
   color:@green;
   margin-left:16px;
   margin-right:12px;
-
+}
 #idle_inhibitor {
   margin-left: 16px;
   color: @red;
