@@ -7,7 +7,7 @@
     "padding-left": 10,
     "padding-right": 10,
     "output": ["eDP-1"],
-    "modules-left": ["wlr/workspaces", "bluetooth", "custom/mediaprev", "custom/mediaplaypause", "custom/medianext", "custom/media"],
+    "modules-left": ["wlr/workspaces", "bluetooth", "custom/media"],
     "modules-center": ["custom/weather", "clock"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "disk", "cpu", "memory", "battery", "backlight", "custom/power"],
     "backlight": {
