@@ -2,7 +2,6 @@ dconf/**
 discord/**
 spotify/**
 pulse/**
-gtk-3.0/**
 pavucontrol.ini
 Slack/**
 Thunar/**
@@ -17,4 +16,3 @@ mimeapps/**
 sst-nodejs/**
 notion-app/**
 mimeapps.list
-settings.ini
