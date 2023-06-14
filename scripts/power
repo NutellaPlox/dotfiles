@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ $1 == "suspend" ]
+then
+  exec swaylock -f -c 000000 -e 
+  exec systemctl suspend
+fi
+
+if [ $1 == "hibernate" ]
+then
+  exec swaylock -f -c 000000 -e
+  exec systemctl hibernate 
+fi
